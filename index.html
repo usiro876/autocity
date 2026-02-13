@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto City - 10x10 都市成長シミュレーション</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Auto City</h1>
+        <p>10×10グリッド都市成長シミュレーション</p>
+      </header>
+
+      <section class="hud">
+        <div class="panel">
+          <h2>ゲーム状態</h2>
+          <ul>
+            <li>Year: <strong id="year">1</strong> / 50</li>
+            <li>総建物数: <strong id="building-count">0</strong></li>
+            <li>クラスター数: <strong id="cluster-count">0</strong></li>
+            <li>累積供給: <strong id="cumulative-supply">0.00</strong></li>
+            <li>推定スコア: <strong id="score">0.00</strong></li>
+          </ul>
+        </div>
+
+        <div class="panel controls">
+          <h2>建設フェイズ</h2>
+          <label>
+            テンプレート
+            <select id="template-select"></select>
+          </label>
+          <div class="row">
+            <button id="rotate-btn">回転 (R)</button>
+            <span>角度: <strong id="rotation">0°</strong></span>
+          </div>
+          <p class="hint">グリッドをクリックして建設。赤は配置不可。</p>
+
+          <h2>進行</h2>
+          <div class="row">
+            <button id="next-year-btn">次の年へ</button>
+            <button id="run-all-btn">Year 50まで実行</button>
+            <button id="reset-btn">リセット</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="board-wrap">
+        <canvas id="board" width="640" height="640"></canvas>
+        <aside class="panel side">
+          <h2>テンプレート詳細</h2>
+          <div id="template-info"></div>
+          <h2>年間ログ</h2>
+          <ol id="year-log"></ol>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
